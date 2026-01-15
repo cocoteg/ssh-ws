@@ -5,6 +5,15 @@ apt install wget curl openssl -y
 
 apt install dropbear -y
 cd /etc/default
+echo "/bin/false" >> /etc/shells
+echo "/usr/sbin/nologin" >> /etc/shells
+/etc/init.d/dropbear restart
+cat> /etc/issue.net << END
+<br>
+<font color="blue"><b>===============================</br></font><br>
+<font color="red"><b>********  Funny VPN  ********</b></font><br>
+<font color="blue"><b>===============================</br></font><br>
+END
 wget -O dropbear "https://github.com/cocoteg/ssh-ws/raw/refs/heads/main/file/dropbear.conf"
 chmod 755 dropbear
 
