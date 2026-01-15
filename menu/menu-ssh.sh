@@ -7,6 +7,7 @@ ________________________________
 3. Cek User Login
 4. List Total Account
 5. Change Domain
+0. Out Menu
 ________________________________"
 read -p "Input Options: " ops
 case $ops in
@@ -15,5 +16,6 @@ case $ops in
 3) bash <(curl -Lks https://github.com/cocoteg/ssh-ws/raw/refs/heads/main/menu/cek-ssh.sh) ;;
 4) bash <(curl -Lks https://github.com/cocoteg/ssh-ws/raw/refs/heads/main/menu/list-ssh.sh) ;;
 5) bash <(curl -Lks https://github.com/cocoteg/ssh-ws/raw/refs/heads/main/menu/domain.sh) ;;
+0) exit 0 ;;
 *) menu
 esac
