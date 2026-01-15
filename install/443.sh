@@ -1,7 +1,9 @@
 # Stunnel 
+echo "sslh sslh/run_daemon select standalone" | sudo debconf-set-selections
+sudo apt install -y sslh
 apt update
 apt install openssl -y
-apt install sslh -y
+#apt install sslh -y
 apt install stunnel4 -y
 apt install stunnel -y
 
