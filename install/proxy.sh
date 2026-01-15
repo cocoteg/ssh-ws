@@ -7,7 +7,6 @@ apt install dropbear -y
 cd /etc/default
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
-/etc/init.d/dropbear restart
 cat> /etc/issue.net << END
 <br>
 <font color="blue"><b>===============================</br></font><br>
@@ -18,7 +17,7 @@ wget -O dropbear "https://github.com/cocoteg/ssh-ws/raw/refs/heads/main/file/dro
 chmod 755 dropbear
 
 systemctl daemon-reload
-systemctl restart dropbear
+/etc/init.d/dropbear restart
 
 bash <(curl -Lks https://raw.githubusercontent.com/melon9912/ssh-only/refs/heads/main/dropbear.sh)
 systemctl restart dropbear
